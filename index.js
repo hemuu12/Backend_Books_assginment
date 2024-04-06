@@ -10,9 +10,7 @@ const app=express()
 
 app.use(express.json())
 app.use(cors({
-    origin: 'https://backend-books-assginment-ikjj.vercel.app/', // Allow requests from this origin
-    optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
-    credentials: true // Allow cookies and authorization headers
+    origin: "*",
 }));
 
 app.get("/", (req, res) => {
