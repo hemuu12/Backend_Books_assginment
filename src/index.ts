@@ -24,6 +24,14 @@ app.use("/hello", (_req, res) => {
   res.send("Hello World");
 });
 
+
+app.get('/api', (req, res) => {
+  res.status(200).json({ message: 'Hello from Express in a Serverless function!' });
+});
+
+
+
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/book', BookRoutes);
