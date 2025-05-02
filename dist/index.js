@@ -15,6 +15,8 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 // Middleware
 app.use((0, cors_1.default)());
+// Middleware
+app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 // Route Middleware
 // app.use(clientUse());
@@ -22,6 +24,9 @@ app.use(express_1.default.json());
 // Test Route
 app.use("/hello", (_req, res) => {
     res.send("Hello World");
+});
+app.get('/api', (req, res) => {
+    res.status(200).json({ message: 'Hello from Express in a Serverless function!' });
 });
 // Routes
 app.use('/api/auth', auth_routes_1.default);

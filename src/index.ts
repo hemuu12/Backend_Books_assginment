@@ -10,6 +10,8 @@ import BookRoutes from './routes/book.routes';
 dotenv.config();
 
 const app = express();
+// Middleware
+app.use(cors());
 
 // Middleware
 app.use(cors());
