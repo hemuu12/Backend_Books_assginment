@@ -4,22 +4,17 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import authRoutes from './routes/auth.routes';
 import BookRoutes from './routes/book.routes';
-// import { errorHandler, routeMiddleware } from './middleware';
-// import { clientUse } from 'valid-ip-scope';
+
 
 dotenv.config();
 
 const app = express();
-// Middleware
-app.use(cors());
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// Route Middleware
-// app.use(clientUse());
-// app.use(routeMiddleware);
+
 
 // Test Route
 app.use("/hello", (_req, res) => {
@@ -40,9 +35,6 @@ app.use('/api/book', BookRoutes);
 
 
 
-// Error handling
-// app.use(errorHandler);
-console.log("process.env", process.env.MONGODB_URI)
 // Database connection
 mongoose
   .connect(process.env.MONGODB_URI!)
